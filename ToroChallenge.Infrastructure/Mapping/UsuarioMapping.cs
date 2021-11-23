@@ -13,7 +13,7 @@ namespace ToroChallenge.Infrastructure.Mapping
 
             builder.HasKey(u => u.Id);
             builder.Property(u => u.Apelido)
-                .HasColumnType("varchar")
+                .HasColumnType("varchar(30)")
                 .HasConversion<string>();
         }
     }

@@ -31,7 +31,7 @@ namespace ToroChallenge.Infrastructure.Migrations
                         .HasColumnName("current_price");
 
                     b.Property<string>("Symbol")
-                        .HasColumnType("varchar")
+                        .HasColumnType("varchar(6)")
                         .HasColumnName("symbol");
 
                     b.HasKey("Id");
@@ -96,7 +96,7 @@ namespace ToroChallenge.Infrastructure.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Apelido")
-                        .HasColumnType("varchar")
+                        .HasColumnType("varchar(30)")
                         .HasColumnName("apelido");
 
                     b.HasKey("Id");

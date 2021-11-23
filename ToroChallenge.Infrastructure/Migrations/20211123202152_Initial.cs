@@ -16,7 +16,7 @@ namespace ToroChallenge.Infrastructure.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    symbol = table.Column<string>(type: "varchar", nullable: true),
+                    symbol = table.Column<string>(type: "varchar(6)", nullable: true),
                     current_price = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
@@ -31,7 +31,7 @@ namespace ToroChallenge.Infrastructure.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    apelido = table.Column<string>(type: "varchar", nullable: true)
+                    apelido = table.Column<string>(type: "varchar(30)", nullable: true)
                 },
                 constraints: table =>
                 {
