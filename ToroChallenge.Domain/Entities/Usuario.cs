@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ToroChallenge.Domain.Entities
 {
     public class Usuario : EntidadeBase
     {
+        [Column("apelido")]
         public string Apelido { get; set; }
     }
 }
