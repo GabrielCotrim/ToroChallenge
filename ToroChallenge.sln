@@ -5,6 +5,14 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.Domain", "ToroChallenge.Domain\ToroChallenge.Domain.csproj", "{D63B8D4C-039F-4B31-BDCF-2243ADE7EE83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.Application", "ToroChallenge.Application\ToroChallenge.Application.csproj", "{B9726789-36D6-4D63-8FBD-0449696540E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.Infrastructure", "ToroChallenge.Infrastructure\ToroChallenge.Infrastructure.csproj", "{F266FB1E-77EB-4A57-85AF-49083B39011C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.Api", "ToroChallenge.Api\ToroChallenge.Api.csproj", "{BC24D42B-4B63-462D-9EC4-ADADC96C183C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.Tests", "ToroChallenge.Tests\ToroChallenge.Tests.csproj", "{25E49B17-3479-47E6-BF0A-20A6BB6D048F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{D63B8D4C-039F-4B31-BDCF-2243ADE7EE83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D63B8D4C-039F-4B31-BDCF-2243ADE7EE83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D63B8D4C-039F-4B31-BDCF-2243ADE7EE83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9726789-36D6-4D63-8FBD-0449696540E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9726789-36D6-4D63-8FBD-0449696540E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9726789-36D6-4D63-8FBD-0449696540E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9726789-36D6-4D63-8FBD-0449696540E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F266FB1E-77EB-4A57-85AF-49083B39011C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F266FB1E-77EB-4A57-85AF-49083B39011C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F266FB1E-77EB-4A57-85AF-49083B39011C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F266FB1E-77EB-4A57-85AF-49083B39011C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC24D42B-4B63-462D-9EC4-ADADC96C183C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC24D42B-4B63-462D-9EC4-ADADC96C183C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC24D42B-4B63-462D-9EC4-ADADC96C183C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC24D42B-4B63-462D-9EC4-ADADC96C183C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E49B17-3479-47E6-BF0A-20A6BB6D048F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E49B17-3479-47E6-BF0A-20A6BB6D048F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E49B17-3479-47E6-BF0A-20A6BB6D048F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E49B17-3479-47E6-BF0A-20A6BB6D048F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
