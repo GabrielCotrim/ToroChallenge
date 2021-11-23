@@ -11,4 +11,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ToroChallenge.Application\ToroChallenge.Application.csproj" />
+    <ProjectReference Include="..\ToroChallenge.Infrastructure\ToroChallenge.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
