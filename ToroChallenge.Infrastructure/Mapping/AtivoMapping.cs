@@ -11,13 +11,10 @@ namespace ToroChallenge.Infrastructure.Mapping
         {
             builder.ToTable(TabelasConst.Ativos, SchemasConst.Identidade);
 
+            builder.HasKey(a => a.Id);
             builder.Property(a => a.Symbol)
                 .HasColumnType("varchar")
                 .HasConversion<string>();
-            builder.Property(a => a.CurrentPrice)
-                .HasColumnType("numeric")
-                .HasConversion<double>();
-            builder.HasMany(p => p.PatrimonioAtivos);
         }
     }
 }

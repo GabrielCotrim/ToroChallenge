@@ -11,10 +11,7 @@ namespace ToroChallenge.Infrastructure.Mapping
         {
             builder.ToTable(TabelasConst.Patrimonios, SchemasConst.Identidade);
 
-            builder.Property(p => p.Saldo)
-                .HasColumnType("numeric")
-                .HasConversion<double>();
-            builder.HasMany(p => p.PatrimonioAtivos);
+            builder.HasKey(p => p.Id);
         }
     }
 }

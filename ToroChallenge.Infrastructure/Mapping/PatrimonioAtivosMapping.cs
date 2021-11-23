@@ -11,9 +11,14 @@ namespace ToroChallenge.Infrastructure.Mapping
         {
             builder.ToTable(TabelasConst.PatrimonioAtivos, SchemasConst.Identidade);
 
-            builder.HasIndex(p => new { p.PatrimonioId, p.AtivoId }).IsUnique();
-            builder.HasOne(p => p.Patrimonio);
-            builder.HasOne(p => p.Ativo);
+            builder.HasKey(p => new { p.PatrimonioId, p.AtivoId });
+
+            builder.HasOne(pa => pa.Patrimonio)
+                .WithMany(p => p.PatrimonioAtivos)
+                .HasForeignKey(pa => pa.PatrimonioId);
+            builder.HasOne(pa => pa.Ativo)
+                .WithMany(a => a.PatrimonioAtivos)
+                .HasForeignKey(pa => pa.AtivoId);
         }
     }
 }

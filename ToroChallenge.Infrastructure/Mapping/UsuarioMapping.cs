@@ -11,6 +11,7 @@ namespace ToroChallenge.Infrastructure.Mapping
         {
             builder.ToTable(TabelasConst.Usuarios, SchemasConst.Identidade);
 
+            builder.HasKey(u => u.Id);
             builder.Property(u => u.Apelido)
                 .HasColumnType("varchar")
                 .HasConversion<string>();
