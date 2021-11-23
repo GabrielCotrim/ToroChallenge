@@ -23,13 +23,16 @@ namespace ToroChallenge.Infrastructure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
+                        .HasColumnName("id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("CurrentPrice")
-                        .HasColumnType("float");
+                        .HasColumnType("float")
+                        .HasColumnName("current_price");
 
                     b.Property<string>("Symbol")
-                        .HasColumnType("varchar");
+                        .HasColumnType("varchar")
+                        .HasColumnName("symbol");
 
                     b.HasKey("Id");
 
@@ -41,16 +44,20 @@ namespace ToroChallenge.Infrastructure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
+                        .HasColumnName("id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("Saldo")
-                        .HasColumnType("float");
+                        .HasColumnType("float")
+                        .HasColumnName("saldo");
 
                     b.Property<int>("TotalAtivos")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("total_ativos");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("usuario_id");
 
                     b.HasKey("Id");
 
@@ -62,13 +69,16 @@ namespace ToroChallenge.Infrastructure.Migrations
             modelBuilder.Entity("ToroChallenge.Domain.Entities.PatrimonioAtivos", b =>
                 {
                     b.Property<int>("PatrimonioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("patrimonio_id");
 
                     b.Property<int>("AtivoId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("ativo_id");
 
                     b.Property<int>("QuantidadeAtivos")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("quantidade_ativos");
 
                     b.HasKey("PatrimonioId", "AtivoId");
 
@@ -82,10 +92,12 @@ namespace ToroChallenge.Infrastructure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
+                        .HasColumnName("id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Apelido")
-                        .HasColumnType("varchar");
+                        .HasColumnType("varchar")
+                        .HasColumnName("apelido");
 
                     b.HasKey("Id");
 

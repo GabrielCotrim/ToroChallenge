@@ -12,6 +12,7 @@ namespace ToroChallenge.Infrastructure.Mapping
             builder.ToTable(TabelasConst.Patrimonios, SchemasConst.Identidade);
 
             builder.HasKey(p => p.Id);
+            builder.HasOne(p => p.Usuario);
         }
     }
 }

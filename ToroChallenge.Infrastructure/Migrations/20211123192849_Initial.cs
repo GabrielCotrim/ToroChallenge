@@ -14,14 +14,14 @@ namespace ToroChallenge.Infrastructure.Migrations
                 schema: "identidade",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Symbol = table.Column<string>(type: "varchar", nullable: true),
-                    CurrentPrice = table.Column<double>(type: "float", nullable: false)
+                    symbol = table.Column<string>(type: "varchar", nullable: true),
+                    current_price = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tb_ativos", x => x.Id);
+                    table.PrimaryKey("PK_tb_ativos", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -29,13 +29,13 @@ namespace ToroChallenge.Infrastructure.Migrations
                 schema: "identidade",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Apelido = table.Column<string>(type: "varchar", nullable: true)
+                    apelido = table.Column<string>(type: "varchar", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tb_usuarios", x => x.Id);
+                    table.PrimaryKey("PK_tb_usuarios", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -43,21 +43,21 @@ namespace ToroChallenge.Infrastructure.Migrations
                 schema: "identidade",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuarioId = table.Column<int>(type: "int", nullable: false),
-                    Saldo = table.Column<double>(type: "float", nullable: false),
-                    TotalAtivos = table.Column<int>(type: "int", nullable: false)
+                    usuario_id = table.Column<int>(type: "int", nullable: false),
+                    saldo = table.Column<double>(type: "float", nullable: false),
+                    total_ativos = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tb_patrimonios", x => x.Id);
+                    table.PrimaryKey("PK_tb_patrimonios", x => x.id);
                     table.ForeignKey(
-                        name: "FK_tb_patrimonios_tb_usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
+                        name: "FK_tb_patrimonios_tb_usuarios_usuario_id",
+                        column: x => x.usuario_id,
                         principalSchema: "identidade",
                         principalTable: "tb_usuarios",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -66,40 +66,40 @@ namespace ToroChallenge.Infrastructure.Migrations
                 schema: "identidade",
                 columns: table => new
                 {
-                    PatrimonioId = table.Column<int>(type: "int", nullable: false),
-                    AtivoId = table.Column<int>(type: "int", nullable: false),
-                    QuantidadeAtivos = table.Column<int>(type: "int", nullable: false)
+                    patrimonio_id = table.Column<int>(type: "int", nullable: false),
+                    ativo_id = table.Column<int>(type: "int", nullable: false),
+                    quantidade_ativos = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tb_patrimonio_ativos", x => new { x.PatrimonioId, x.AtivoId });
+                    table.PrimaryKey("PK_tb_patrimonio_ativos", x => new { x.patrimonio_id, x.ativo_id });
                     table.ForeignKey(
-                        name: "FK_tb_patrimonio_ativos_tb_ativos_AtivoId",
-                        column: x => x.AtivoId,
+                        name: "FK_tb_patrimonio_ativos_tb_ativos_ativo_id",
+                        column: x => x.ativo_id,
                         principalSchema: "identidade",
                         principalTable: "tb_ativos",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_tb_patrimonio_ativos_tb_patrimonios_PatrimonioId",
-                        column: x => x.PatrimonioId,
+                        name: "FK_tb_patrimonio_ativos_tb_patrimonios_patrimonio_id",
+                        column: x => x.patrimonio_id,
                         principalSchema: "identidade",
                         principalTable: "tb_patrimonios",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_tb_patrimonio_ativos_AtivoId",
+                name: "IX_tb_patrimonio_ativos_ativo_id",
                 schema: "identidade",
                 table: "tb_patrimonio_ativos",
-                column: "AtivoId");
+                column: "ativo_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tb_patrimonios_UsuarioId",
+                name: "IX_tb_patrimonios_usuario_id",
                 schema: "identidade",
                 table: "tb_patrimonios",
-                column: "UsuarioId");
+                column: "usuario_id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
