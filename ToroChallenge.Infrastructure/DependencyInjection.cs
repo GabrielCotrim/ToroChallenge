@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using ToroChallenge.Infrastructure.Data;
+using ToroChallenge.Infrastructure.Data.Interfaces;
 
 namespace ToroChallenge.Infrastructure
 {
@@ -19,6 +20,7 @@ namespace ToroChallenge.Infrastructure
                         options.EnableRetryOnFailure();
                     });
             });
+            services.AddScoped<IDbSeed, DbSeed>();
             return services;
         }
     }
