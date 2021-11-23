@@ -10,5 +10,6 @@ namespace ToroChallenge.Domain.Entities
     {
         public string Symbol { get; set; }
         public double CurrentPrice { get; set; }
+        public virtual ICollection<PatrimonioAtivos> PatrimonioAtivos { get; set; }
     }
 }

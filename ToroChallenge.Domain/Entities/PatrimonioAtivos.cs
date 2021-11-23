@@ -8,10 +8,10 @@ namespace ToroChallenge.Domain.Entities
 {
     public class PatrimonioAtivos
     {
-        public int IdPatrimonio { get; set; }
+        public int PatrimonioId { get; set; }
         public virtual Patrimonio Patrimonio { get; set; }
-        public int IdAtivo { get; set; }
+        public int AtivoId { get; set; }
         public virtual Ativo Ativo { get; set; }
-        public int Quantidade { get; set; }
+        public int QuantidadeAtivos { get; set; }
     }
 }

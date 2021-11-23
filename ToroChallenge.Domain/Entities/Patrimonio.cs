@@ -8,9 +8,10 @@ namespace ToroChallenge.Domain.Entities
 {
     public class Patrimonio : EntidadeBase
     {
-        public int IdUser { get; set; }
+        public int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
         public double Saldo { get; set; }
         public int TotalAtivos { get; set; }
+        public virtual ICollection<PatrimonioAtivos> PatrimonioAtivos { get; set; }
     }
 }
