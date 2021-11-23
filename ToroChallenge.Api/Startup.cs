@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ToroChallenge.Application;
+using ToroChallenge.Infrastructure;
 
 namespace ToroChallenge.Api
 {
@@ -32,6 +34,9 @@ namespace ToroChallenge.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ToroChallenge.Api", Version = "v1" });
             });
+
+            services.RegisterApplicationServices();
+            services.RegisterInfrastructureServices(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
