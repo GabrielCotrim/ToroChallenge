@@ -9,8 +9,8 @@ using ToroChallenge.Infrastructure.Data;
 namespace ToroChallenge.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211124005324_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20211124183256_InitialCreation")]
+    partial class InitialCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,7 +38,49 @@ namespace ToroChallenge.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Symbol")
+                        .IsUnique()
+                        .HasFilter("[symbol] IS NOT NULL");
+
                     b.ToTable("tb_ativos", "identidade");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CurrentPrice = 28.440000000000001,
+                            Symbol = "PETR4"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CurrentPrice = 25.91,
+                            Symbol = "MGLU3"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CurrentPrice = 25.91,
+                            Symbol = "VVAR3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CurrentPrice = 40.770000000000003,
+                            Symbol = "SANB11"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CurrentPrice = 115.98,
+                            Symbol = "TORO4"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CurrentPrice = 0.90000000000000002,
+                            Symbol = "OIBR3"
+                        });
                 });
 
             modelBuilder.Entity("ToroChallenge.Domain.Entities.Patrimonio", b =>
@@ -62,6 +104,14 @@ namespace ToroChallenge.Infrastructure.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("tb_patrimonios", "identidade");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Saldo = 100.0,
+                            UsuarioId = 1
+                        });
                 });
 
             modelBuilder.Entity("ToroChallenge.Domain.Entities.PatrimonioAtivos", b =>
@@ -100,6 +150,13 @@ namespace ToroChallenge.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tb_usuarios", "identidade");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Apelido = "Usuário Mock"
+                        });
                 });
 
             modelBuilder.Entity("ToroChallenge.Domain.Entities.Patrimonio", b =>

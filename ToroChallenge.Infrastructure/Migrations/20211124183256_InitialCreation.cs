@@ -2,7 +2,7 @@
 
 namespace ToroChallenge.Infrastructure.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialCreation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -87,6 +87,40 @@ namespace ToroChallenge.Infrastructure.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                schema: "identidade",
+                table: "tb_ativos",
+                columns: new[] { "id", "current_price", "symbol" },
+                values: new object[,]
+                {
+                    { 1, 28.440000000000001, "PETR4" },
+                    { 2, 25.91, "MGLU3" },
+                    { 3, 25.91, "VVAR3" },
+                    { 4, 40.770000000000003, "SANB11" },
+                    { 5, 115.98, "TORO4" },
+                    { 6, 0.90000000000000002, "OIBR3" }
+                });
+
+            migrationBuilder.InsertData(
+                schema: "identidade",
+                table: "tb_usuarios",
+                columns: new[] { "id", "apelido" },
+                values: new object[] { 1, "Usuário Mock" });
+
+            migrationBuilder.InsertData(
+                schema: "identidade",
+                table: "tb_patrimonios",
+                columns: new[] { "id", "saldo", "usuario_id" },
+                values: new object[] { 1, 100.0, 1 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tb_ativos_symbol",
+                schema: "identidade",
+                table: "tb_ativos",
+                column: "symbol",
+                unique: true,
+                filter: "[symbol] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tb_patrimonio_ativos_ativo_id",
