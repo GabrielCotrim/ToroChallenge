@@ -4,7 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using ToroChallenge.Application.Interfaces.Repositories;
 using ToroChallenge.Infrastructure.Data;
-using ToroChallenge.Infrastructure.Data.Interfaces;
 using ToroChallenge.Infrastructure.Repositories;
 
 namespace ToroChallenge.Infrastructure
@@ -22,7 +21,6 @@ namespace ToroChallenge.Infrastructure
                         options.EnableRetryOnFailure();
                     });
             });
-            services.AddScoped<IDbSeed, DbSeed>();
             services.AddScoped<IPatrimonioRepository, PatrimonioRepository>();
             return services;
         }
