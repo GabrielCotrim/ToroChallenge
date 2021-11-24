@@ -2,7 +2,7 @@
 
 namespace ToroChallenge.Infrastructure.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,8 +46,7 @@ namespace ToroChallenge.Infrastructure.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     usuario_id = table.Column<int>(type: "int", nullable: false),
-                    saldo = table.Column<double>(type: "float", nullable: false),
-                    total_ativos = table.Column<int>(type: "int", nullable: false)
+                    saldo = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {

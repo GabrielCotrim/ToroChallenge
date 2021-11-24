@@ -9,8 +9,8 @@ using ToroChallenge.Infrastructure.Data;
 namespace ToroChallenge.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211123202152_Initial")]
-    partial class Initial
+    [Migration("20211124005324_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,10 +52,6 @@ namespace ToroChallenge.Infrastructure.Migrations
                     b.Property<double>("Saldo")
                         .HasColumnType("float")
                         .HasColumnName("saldo");
-
-                    b.Property<int>("TotalAtivos")
-                        .HasColumnType("int")
-                        .HasColumnName("total_ativos");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int")
