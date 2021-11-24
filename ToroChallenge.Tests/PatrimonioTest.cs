@@ -25,7 +25,7 @@ namespace ToroChallenge.Tests
         [Fact]
         public async Task GetPatrimonioDoUsuario()
         {
-            var uri = $"/api/patrimonio/GetUserPosition/1";
+            var uri = $"/api/patrimonio/userPosition?id=1";
             var request = new HttpRequestMessage(HttpMethod.Get, uri);
 
             var response = await _client.SendAsync(request);

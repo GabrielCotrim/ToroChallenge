@@ -32,7 +32,7 @@ namespace ToroChallenge.Application.Services
                         Symbol = pa.Ativo.Symbol,
                         CurrentPrice = pa.Ativo.CurrentPrice
                     };
-                }).ToList(),
+                }).ToList() ?? new List<PositionModel>(),
                 Consolidated = consolidated
             };
             return userPositionModel;
