@@ -1,5 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
+using ToroChallenge.Application.ApplicationServices;
+using ToroChallenge.Application.AutoMapper;
+using ToroChallenge.Application.Interfaces.ApplicationServices;
+using ToroChallenge.Application.Interfaces.Services;
+using ToroChallenge.Application.Services;
 
 namespace ToroChallenge.Application
 {
@@ -7,6 +12,9 @@ namespace ToroChallenge.Application
     {
         public static IServiceCollection RegisterApplicationServices(this IServiceCollection services)
         {
+            services.RegisterAutoMapper();
+            services.AddScoped<IPatrimonioService, PatrimonioService>();
+            services.AddScoped<IPatrimonioApplicationService, PatrimonioApplicationService>();
             return services;
         }
     }
