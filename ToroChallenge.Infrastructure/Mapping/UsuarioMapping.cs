@@ -15,6 +15,13 @@ namespace ToroChallenge.Infrastructure.Mapping
             builder.Property(u => u.Apelido)
                 .HasColumnType("varchar(30)")
                 .HasConversion<string>();
+            builder.HasData(
+                new Usuario
+                {
+                    Id = 1,
+                    Apelido = "Usuário Mock"
+                }
+            );
         }
     }
 }

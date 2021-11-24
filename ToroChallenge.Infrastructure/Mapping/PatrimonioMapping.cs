@@ -13,6 +13,14 @@ namespace ToroChallenge.Infrastructure.Mapping
 
             builder.HasKey(p => p.Id);
             builder.HasOne(p => p.Usuario);
+            builder.HasData(
+                new Patrimonio
+                {
+                    Id = 1,
+                    UsuarioId = 1,
+                    Saldo = 100.0
+                }
+            );
         }
     }
 }
