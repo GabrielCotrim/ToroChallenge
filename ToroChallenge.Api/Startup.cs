@@ -13,7 +13,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using ToroChallenge.Application;
 using ToroChallenge.Infrastructure;
-using ToroChallenge.Infrastructure.Data.Interfaces;
 
 namespace ToroChallenge.Api
 {
@@ -60,13 +59,6 @@ namespace ToroChallenge.Api
             {
                 endpoints.MapControllers();
             });
-
-            var scopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
-            using (var scope = scopeFactory.CreateScope())
-            {
-                var dbInitializer = scope.ServiceProvider.GetService<IDbSeed>();
-                dbInitializer.SeedData();
-            }
         }
     }
 }
