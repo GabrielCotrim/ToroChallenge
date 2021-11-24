@@ -45,6 +45,18 @@ namespace ToroChallenge.Infrastructure.Data
                     }
 
                     context.SaveChanges();
+
+                    if(!context.Patrimonios.Any())
+                    {
+                        var patrimonioMock = new Patrimonio
+                        {
+                            UsuarioId = 1,
+                            Saldo = 100.0
+                        };
+                        context.Patrimonios.Add(patrimonioMock);
+                    }
+
+                    context.SaveChanges();
                 }
             }
         }
