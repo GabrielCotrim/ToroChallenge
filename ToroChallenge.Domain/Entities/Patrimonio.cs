@@ -11,9 +11,6 @@ namespace ToroChallenge.Domain.Entities
 
         [Column("saldo")]
         public double Saldo { get; set; }
-
-        [Column("total_ativos")]
-        public int TotalAtivos { get; set; }
         public virtual ICollection<PatrimonioAtivos> PatrimonioAtivos { get; set; }
     }
 }
