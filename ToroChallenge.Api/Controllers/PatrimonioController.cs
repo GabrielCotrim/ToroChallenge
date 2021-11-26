@@ -11,10 +11,10 @@ namespace ToroChallenge.Api.Controllers
     [ApiController]
     public class PatrimonioController : ControllerBase
     {
-        private readonly IPatrimonioApplicationService _aplicationService;
+        private readonly IPatrimonioApplicationService _applicationService;
         public PatrimonioController(IPatrimonioApplicationService applicationService)
         {
-            _aplicationService = applicationService;
+            _applicationService = applicationService;
         }
 
         [HttpGet]
@@ -24,7 +24,7 @@ namespace ToroChallenge.Api.Controllers
         {
             try
             {
-                var userPosition = await _aplicationService.ObtenhaPatrimonioDoUsuario(id);
+                var userPosition = await _applicationService.ObtenhaPatrimonioDoUsuario(id);
                 return Ok(userPosition);
             }
             catch (NotFoundException)
