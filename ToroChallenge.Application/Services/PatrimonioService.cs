@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ToroChallenge.Application.Interfaces.Repositories;
 using ToroChallenge.Application.Interfaces.Services;
-using ToroChallenge.Domain.Models;
+using ToroChallenge.Domain.Entities;
 
 namespace ToroChallenge.Application.Services
 {
@@ -17,25 +17,13 @@ namespace ToroChallenge.Application.Services
             _repository = repository;
         }
 
-        public async Task<UserPositionModel> ObtenhaPatrimonioDoUsuario(int idUser)
+        public async Task<Patrimonio> ObtenhaPatrimonioDoUsuario(int idUser)
         {
             var patrimonio = await _repository.ObtenhaPatrimonioDoUsuario(idUser);
-            var consolidatedNullable = patrimonio.PatrimonioAtivos?.Sum(pa => (pa.QuantidadeAtivos * pa.Ativo.CurrentPrice));
-            var consolidated = consolidatedNullable.HasValue ? consolidatedNullable.Value : 0.0;
-            var userPositionModel = new UserPositionModel
-            {
-                CheckingAccountAmount = patrimonio.Saldo,
-                Positions = patrimonio.PatrimonioAtivos?.Select(pa => {
-                    return new PositionModel
-                    {
-                        Amount = pa.QuantidadeAtivos,
-                        Symbol = pa.Ativo.Symbol,
-                        CurrentPrice = pa.Ativo.CurrentPrice
-                    };
-                }).ToList() ?? new List<PositionModel>(),
-                Consolidated = consolidated
-            };
-            return userPositionModel;
+            var sumarizadoAtivosNullable = patrimonio.PatrimonioAtivos?.Sum(pa => (pa.QuantidadeAtivos * pa.Ativo.CurrentPrice));
+            var sumarizadoAtivos = sumarizadoAtivosNullable.HasValue ? sumarizadoAtivosNullable.Value : 0.0;
+            patrimonio.Sumarizado = sumarizadoAtivos + patrimonio.Saldo;
+            return patrimonio;
         }
     }
 }
