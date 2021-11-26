@@ -22,6 +22,8 @@ namespace ToroChallenge.Infrastructure
                     });
             });
             services.AddScoped<IPatrimonioRepository, PatrimonioRepository>();
+            services.AddScoped<IPatrimonioAtivosRepository, PatrimonioAtivosRepository>();
+            services.AddScoped<IAtivoRepository, AtivoRepository>();
             return services;
         }
     }

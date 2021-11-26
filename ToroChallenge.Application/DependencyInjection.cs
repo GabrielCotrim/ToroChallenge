@@ -15,6 +15,10 @@ namespace ToroChallenge.Application
             services.RegisterAutoMapper();
             services.AddScoped<IPatrimonioService, PatrimonioService>();
             services.AddScoped<IPatrimonioApplicationService, PatrimonioApplicationService>();
+            services.AddScoped<IPatrimonioAtivosApplicationService, PatrimonioAtivosApplicationService>();
+            services.AddScoped<IPatrimonioAtivosService, PatrimonioAtivosService>();
+            services.AddScoped<IAtivoApplicationService, AtivoApplicationService>();
+            services.AddScoped<IAtivoService, AtivoService>();
             return services;
         }
     }
