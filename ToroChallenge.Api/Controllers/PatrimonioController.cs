@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using ToroChallenge.Application.DTOs.Responses;
-using ToroChallenge.Application.Interfaces.Services;
+using ToroChallenge.Application.Interfaces.ApplicationServices;
 using ToroChallenge.Application.Utils.Exceptions;
 
 namespace ToroChallenge.Api.Controllers
@@ -11,8 +11,8 @@ namespace ToroChallenge.Api.Controllers
     [ApiController]
     public class PatrimonioController : ControllerBase
     {
-        private readonly IPatrimonioService _aplicationService;
-        public PatrimonioController(IPatrimonioService applicationService)
+        private readonly IPatrimonioApplicationService _aplicationService;
+        public PatrimonioController(IPatrimonioApplicationService applicationService)
         {
             _aplicationService = applicationService;
         }
