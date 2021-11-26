@@ -13,6 +13,7 @@ namespace ToroChallenge.Infrastructure.Mapping
 
             builder.HasKey(a => a.Id);
             builder.HasIndex(a => a.Symbol).IsUnique();
+            builder.HasMany(a => a.PatrimonioAtivos);
             builder.Property(a => a.Symbol)
                 .HasColumnType("varchar(6)")
                 .HasConversion<string>();
